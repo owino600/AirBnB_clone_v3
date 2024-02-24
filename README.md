@@ -154,7 +154,7 @@ EOF  all  create  destroy  help  quit  show  update
 No known bugs at this time. 
 
 ## Authors
-Daniel Owino - [Github](https://github.com/owino600) / [Twitter](https://twitter.com/Dante_se~council Odin)  
+Daniel Owino - [Github](https://github.com/owino600) / [Twitter](https://twitter.com/Bracha_SE)  
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
 
 Second part of Airbnb: Joann Vuong
