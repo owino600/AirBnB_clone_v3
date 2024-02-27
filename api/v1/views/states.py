@@ -7,12 +7,14 @@ from models import storage
 from models.state import State
 from api.v1.views import app_views
 
+
 @app_views.route('/states', methods=['GET'])
 def get_states():
     """Retrieves the list of all State objects"""
     states = storage.all(State).values()
     states_list = [state.to_dict() for state in states]
     return jsonify(states_list), 200
+
 
 
 @app_views.route('/states/<state_id>', methods=['GET'])
@@ -22,6 +24,7 @@ def get_state(state_id):
     if state is None:
         abort(404)
     return jsonify(state.to_dict()), 200
+
 
 
 @app_views.route('/states/<state_id>', methods=['DELETE'])
