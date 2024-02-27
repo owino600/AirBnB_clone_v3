@@ -12,7 +12,8 @@ def get_states():
     """Retrieves the list of all State objects"""
     states = storage.all(State).values()
     states_list = [state.to_dict() for state in states]
-    return jsonify(states_list)
+    return jsonify(states_list), 200
+
 
 @app_views.route('/states/<state_id>', methods=['GET'])
 def get_state(state_id):
@@ -20,7 +21,8 @@ def get_state(state_id):
     state = storage.get(State, state_id)
     if state is None:
         abort(404)
-    return jsonify(state.to_dict())
+    return jsonify(state.to_dict()), 200
+
 
 @app_views.route('/states/<state_id>', methods=['DELETE'])
 def delete_state(state_id):
@@ -32,6 +34,7 @@ def delete_state(state_id):
     storage.save()
     return jsonify({}), 200
 
+
 @app_views.route('/states', methods=['POST'])
 def create_state():
     """Creates a State"""
@@ -42,6 +45,7 @@ def create_state():
     state = State(**request.get_json())
     state.save()
     return jsonify(state.to_dict()), 201
+
 
 @app_views.route('/states/<state_id>', methods=['PUT'])
 def update_state(state_id):
