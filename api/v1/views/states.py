@@ -16,7 +16,6 @@ def get_states():
     return jsonify(states_list), 200
 
 
-
 @app_views.route('/states/<state_id>', methods=['GET'])
 def get_state(state_id):
     """Retrieves a State object"""
@@ -24,7 +23,6 @@ def get_state(state_id):
     if state is None:
         abort(404)
     return jsonify(state.to_dict()), 200
-
 
 
 @app_views.route('/states/<state_id>', methods=['DELETE'])
